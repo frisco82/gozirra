@@ -7,7 +7,7 @@
   <property name='debug' value='No'/>
 
 
-  <target name='compile-java-dist' depends='info,compile-java'/>
+  <target name='compile-java-dist' depends='compile-java'/>
 
 
   <target name='compile-test'>
@@ -103,7 +103,7 @@
   </target>
 
 
-  <target name='source-tarball' depends='info'>
+  <target name='source-tarball' >
     <property file='info.txt'/>
     <filter token='release' value='${release}'/>
     <filter token='revision' value='${Revision}'/>
@@ -150,13 +150,7 @@
 
 
   <target name='build-dist' 
-    depends='info,all-jar,server-only-jar,client-only-jar,source-tarball,web'/>
+    depends='all-jar,server-only-jar,client-only-jar,source-tarball,web'/>
 
 
-  <target name='info'>
-    <exec executable='svn' output='info.txt'>
-      <arg line='info'/>
-    </exec>
-    <replace file='info.txt' token=': ' value='='/>
-  </target>
 </project>
