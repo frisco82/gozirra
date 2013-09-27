@@ -7,7 +7,7 @@ import java.io.IOException;
  * (c)2005 Sean Russell
  */
 public class Command {
-  public final static String ENCODING = "US-ASCII";
+  public static String ENCODING = "UTF-8";
   private String _command;
 
   private Command( String msg ) { 
