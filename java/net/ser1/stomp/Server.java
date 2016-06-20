@@ -449,6 +449,7 @@ public class Server {
 
       } else {
         if (h == null) h = new HashMap();
+        h.put("message-id", Long.toHexString(Double.doubleToLongBits(Math.random())));
         String destination = (String)h.get("destination");
         if (c == Command.SEND) {
           if (y instanceof IntraVMClient ||
